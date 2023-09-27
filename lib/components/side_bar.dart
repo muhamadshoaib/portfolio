@@ -10,17 +10,19 @@ class SideBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      backgroundColor: Theme.of(context).secondaryHeaderColor,
       child: SafeArea(
         child: Column(
           children: [
             Expanded(
               child: SingleChildScrollView(
-                padding: EdgeInsets.all(defaultPadding),
+                padding: const EdgeInsets.all(defaultPadding),
                 child: Column(
                   children: [
-                    SizedBox(height: defaultPadding),
-                    Divider(),
-                    SizedBox(height: defaultPadding / 2),
+                    const Padding(
+                      padding: EdgeInsets.symmetric(vertical: defaultPadding),
+                      child: Divider(),
+                    ),
                     TextButton(
                       onPressed: () {},
                       child: FittedBox(
@@ -35,18 +37,23 @@ class SideBar extends StatelessWidget {
                                     .color,
                               ),
                             ),
-                            SizedBox(width: defaultPadding / 2),
-                            SvgPicture.asset("assets/icons/download.svg")
+                            Padding(
+                              padding: const EdgeInsets.symmetric(
+                                horizontal: defaultPadding,
+                              ),
+                              child:
+                                  SvgPicture.asset("assets/icons/download.svg"),
+                            )
                           ],
                         ),
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.only(top: defaultPadding),
-                      color: Color(0xFF24242E),
+                      margin: const EdgeInsets.only(top: defaultPadding),
+                      color: const Color(0xFF24242E),
                       child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Spacer(),
                           IconButton(
                             onPressed: () {},
                             icon: SvgPicture.asset("assets/icons/linkedin.svg"),
@@ -59,7 +66,6 @@ class SideBar extends StatelessWidget {
                             onPressed: () {},
                             icon: SvgPicture.asset("assets/icons/twitter.svg"),
                           ),
-                          Spacer(),
                         ],
                       ),
                     ),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/screens/main_screen.dart';
+import 'package:portfolio/screens/main_screen/views/main_screen.dart';
 import 'package:portfolio/theme/theme_manager.dart';
 import 'package:provider/provider.dart';
 
@@ -18,36 +18,7 @@ class MyApp extends StatelessWidget {
     return Consumer<ThemeNotifier>(
       builder: (context, theme, _) => MaterialApp(
         theme: theme.getTheme(),
-        home: MainScreen(
-          children: [],
-        ),
-        // home: Scaffold(
-        //   appBar: AppBar(
-        //     title: Text('Hybrid Theme'),
-        //   ),
-        //   body: Row(
-        //     children: [
-        //       Container(
-        //         child: FlatButton(
-        //           onPressed: () => {
-        //             print('Set Light Theme'),
-        //             theme.setLightMode(),
-        //           },
-        //           child: Text('Set Light Theme'),
-        //         ),
-        //       ),
-        //       Container(
-        //         child: FlatButton(
-        //           onPressed: () => {
-        //             print('Set Dark theme'),
-        //             theme.setDarkMode(),
-        //           },
-        //           child: Text('Set Dark theme'),
-        //         ),
-        //       ),
-        //     ],
-        //   ),
-        // ),
+        home: const MainScreen(),
       ),
     );
   }
