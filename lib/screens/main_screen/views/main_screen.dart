@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/screens/main_screen/components/contact_details_card.dart';
+import 'package:portfolio/screens/main_screen/components/contact_details_main_card.dart';
 import 'package:portfolio/screens/main_screen/components/numbers_card.dart';
 import 'package:portfolio/util_components/background_card.dart';
 import 'package:portfolio/util_components/side_bar.dart';
-import 'package:portfolio/screens/main_screen/components/experience_card.dart';
+import 'package:portfolio/screens/main_screen/components/experience_main_card.dart';
 import 'package:portfolio/screens/main_screen/components/personal_info_card.dart';
 import 'package:portfolio/utils/constants.dart';
 import 'package:portfolio/utils/responsive.dart';

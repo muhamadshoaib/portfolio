@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/util_components/background_card.dart';
-import 'package:portfolio/util_components/contact_detail.dart';
+import 'package:portfolio/util_components/contact_detail_card.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 // ignore: must_be_immutable
