@@ -1,15 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/components/background_card.dart';
-import 'package:portfolio/components/side_bar.dart';
+import 'package:portfolio/screens/main_screen/components/contact_details_card.dart';
+import 'package:portfolio/screens/main_screen/components/numbers_card.dart';
+import 'package:portfolio/util_components/background_card.dart';
+import 'package:portfolio/util_components/side_bar.dart';
+import 'package:portfolio/screens/main_screen/components/experience_card.dart';
 import 'package:portfolio/screens/main_screen/components/personal_info_card.dart';
 import 'package:portfolio/utils/constants.dart';
 import 'package:portfolio/utils/responsive.dart';
 
 class MainScreen extends StatelessWidget {
-  const MainScreen({Key? key}) : super(key: key);
+  late double width;
+  MainScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    width = MediaQuery.of(context).size.width;
     return Scaffold(
       // We hide the appBar on desktop
       appBar: Responsive.isDesktop(context)
@@ -28,22 +33,27 @@ class MainScreen extends StatelessWidget {
         child: SideBar(),
       ),
       body: Wrap(
-        spacing: 20.0,
-        runSpacing: 20.0,
+        spacing: defaultPadding - 10.0,
+        runSpacing: defaultPadding - 10.0,
         children: [
-          PersonalInformationCard(),
-          BackgroundCard(
-            heading: 'Experience',
-            mainChild: Container(
-                child: Text(
-              'Hellop Woasdasdasd asdas das das da sd as d asd as d asd as da sd as d asd rld',
-              style: Theme.of(context).textTheme.bodySmall,
-            )),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              PersonalInformationCard(),
+              NumbersCard(),
+              ContactDetailsCard(),
+            ],
           ),
-          // BackgroundCard(
-          //   heading: 'Experience',
-          //   mainChild: Container(child: Text('Hellop World')),
-          // ),
+          Column(
+            children: [
+              ExperienceCard(),
+            ],
+          ),
+          BackgroundCard(
+            heading: 'Software Skills',
+            // maxWidth: width / 5,
+            mainChild: Container(child: Text('Hellop World')),
+          ),
         ],
       ),
     );
