@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/screens/main_screen/components/contact_details_main_card.dart';
 import 'package:portfolio/screens/main_screen/components/education_main_card.dart';
+import 'package:portfolio/screens/main_screen/components/github_stats_card.dart';
 import 'package:portfolio/screens/main_screen/components/numbers_card.dart';
 import 'package:portfolio/util_components/background_card.dart';
 import 'package:portfolio/util_components/side_bar.dart';
@@ -34,28 +35,44 @@ class MainScreen extends StatelessWidget {
         child: SideBar(),
       ),
       body: SingleChildScrollView(
-        child: Wrap(
-          spacing: defaultPadding - 10.0,
-          runSpacing: defaultPadding - 10.0,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          // spacing: defaultPadding - 10.0,
+          // runSpacing: defaultPadding - 10.0,
           children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                PersonalInformationCard(),
-                NumbersCard(),
-                ContactDetailsCard(),
-              ],
+            Expanded(
+              // flex: 2,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  PersonalInformationCard(),
+                  NumbersCard(),
+                  ContactDetailsCard(),
+                ],
+              ),
             ),
-            Column(
-              children: [
-                ExperienceCard(),
-                EducationCard(),
-              ],
+            Expanded(
+              flex: 3,
+              child: Column(
+                children: [
+                  ExperienceCard(),
+                  EducationCard(),
+                ],
+              ),
             ),
-            BackgroundCard(
-              heading: 'Software Skills',
-              // maxWidth: width / 5,
-              mainChild: Container(child: Text('Hello World')),
+            Expanded(
+              // flex: 2,
+              child: Column(
+                children: [
+                  const GithubStatsCard(),
+                  BackgroundCard(
+                    heading: 'Software Skills',
+                    // maxWidth: width / 5,
+                    mainChild: Container(child: Text('Hello World')),
+                  ),
+                ],
+              ),
             ),
           ],
         ),
