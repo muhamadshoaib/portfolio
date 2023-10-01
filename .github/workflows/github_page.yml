@@ -15,4 +15,4 @@ jobs:
         with:
             webRenderer: html
             targetBranch: deployment
-            baseHref: "/potfolio/"
+            baseHref: "/portfolio/"
