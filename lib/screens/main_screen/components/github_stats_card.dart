@@ -65,9 +65,33 @@ class _GithubStatsCardState extends State<GithubStatsCard> {
                 children: [
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 10.0),
-                    child: Text(
-                      "${responseBody['currentStreak']['length']}",
-                      style: Theme.of(context).textTheme.bodyLarge,
+                    child: Column(
+                      children: <Widget>[
+                        SizedBox(
+                          height: 100.0,
+                          child: Stack(
+                            children: <Widget>[
+                              Center(
+                                child: Container(
+                                  width: 100,
+                                  height: 100,
+                                  child: CircularProgressIndicator(
+                                    strokeWidth: 3,
+                                    value: 1.0,
+                                    color: Theme.of(context).primaryColorDark,
+                                  ),
+                                ),
+                              ),
+                              Center(
+                                child: Text(
+                                  "${responseBody['currentStreak']['length']}",
+                                  style: Theme.of(context).textTheme.bodyLarge,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                   Padding(
