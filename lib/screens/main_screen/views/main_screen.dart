@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/screens/main_screen/components/contact_details_main_card.dart';
+import 'package:portfolio/screens/main_screen/components/education_main_card.dart';
 import 'package:portfolio/screens/main_screen/components/numbers_card.dart';
 import 'package:portfolio/util_components/background_card.dart';
 import 'package:portfolio/util_components/side_bar.dart';
@@ -32,29 +33,32 @@ class MainScreen extends StatelessWidget {
         padding: EdgeInsets.symmetric(vertical: 20.0),
         child: SideBar(),
       ),
-      body: Wrap(
-        spacing: defaultPadding - 10.0,
-        runSpacing: defaultPadding - 10.0,
-        children: [
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              PersonalInformationCard(),
-              NumbersCard(),
-              ContactDetailsCard(),
-            ],
-          ),
-          Column(
-            children: [
-              ExperienceCard(),
-            ],
-          ),
-          BackgroundCard(
-            heading: 'Software Skills',
-            // maxWidth: width / 5,
-            mainChild: Container(child: Text('Hellop World')),
-          ),
-        ],
+      body: SingleChildScrollView(
+        child: Wrap(
+          spacing: defaultPadding - 10.0,
+          runSpacing: defaultPadding - 10.0,
+          children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                PersonalInformationCard(),
+                NumbersCard(),
+                ContactDetailsCard(),
+              ],
+            ),
+            Column(
+              children: [
+                ExperienceCard(),
+                EducationCard(),
+              ],
+            ),
+            BackgroundCard(
+              heading: 'Software Skills',
+              // maxWidth: width / 5,
+              mainChild: Container(child: Text('Hellop World')),
+            ),
+          ],
+        ),
       ),
     );
   }

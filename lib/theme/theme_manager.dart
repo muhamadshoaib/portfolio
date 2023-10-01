@@ -9,6 +9,8 @@ class ThemeNotifier with ChangeNotifier {
       primaryColorDark: const Color(0xFFff8828),
       brightness: Brightness.dark,
       shadowColor: const Color(0xFF51342d),
+      splashColor: const Color(0xFFd0af61),
+      highlightColor: const Color(0xFF383121),
       iconTheme: const IconThemeData(
         size: 25.0,
         color: Color(0xFFff8828),
