@@ -55,7 +55,7 @@ class MainScreen extends StatelessWidget {
             BackgroundCard(
               heading: 'Software Skills',
               // maxWidth: width / 5,
-              mainChild: Container(child: Text('Hellop World')),
+              mainChild: Container(child: Text('Hello World')),
             ),
           ],
         ),
