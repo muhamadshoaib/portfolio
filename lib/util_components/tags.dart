@@ -20,6 +20,7 @@ class Tag extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 10.0),
       child: Text(
         tag,
+        textAlign: TextAlign.center,
         style: Theme.of(context).textTheme.bodySmall!.copyWith(
               color: textColor,
             ),
