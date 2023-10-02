@@ -72,11 +72,11 @@ class _GithubStatsCardState extends State<GithubStatsCard> {
                           child: Stack(
                             children: <Widget>[
                               Center(
-                                child: Container(
+                                child: SizedBox(
                                   width: 100,
                                   height: 100,
                                   child: CircularProgressIndicator(
-                                    strokeWidth: 3,
+                                    strokeWidth: 6,
                                     value: 1.0,
                                     color: Theme.of(context).primaryColorDark,
                                   ),
