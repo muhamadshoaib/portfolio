@@ -33,6 +33,7 @@ class _GithubStatsCardState extends State<GithubStatsCard> {
       return await http.get(url, headers: {
         "content-type": 'application/json',
         "Access-Control-Allow-Origin": "*",
+        "X-Requested-With": "XMLHttpRequest",
         "Access-Control-Allow-Methods": "POST, GET, PATCH",
       }).timeout(const Duration(seconds: 60), onTimeout: () {
         throw "Unable to fetch Response";
