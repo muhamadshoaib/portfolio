@@ -41,11 +41,14 @@ class Experience extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    '${jobTitle.toUpperCase()} - $companyName',
-                    style: Theme.of(context).textTheme.bodyMedium,
+                  Expanded(
+                    flex: 8,
+                    child: Text(
+                      '${jobTitle.toUpperCase()} - $companyName',
+                      style: Theme.of(context).textTheme.bodyMedium,
+                    ),
                   ),
-                  tag,
+                  Expanded(child: tag),
                 ],
               ),
               const SizedBox(height: 10.0),
@@ -56,8 +59,6 @@ class Experience extends StatelessWidget {
                   style: Theme.of(context).textTheme.bodySmall,
                 ),
               ),
-              // Text('Month/Year'),
-              // Text('Month/Year'),
             ],
           ),
         )

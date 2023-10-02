@@ -14,7 +14,6 @@ class EducationCard extends StatelessWidget {
     height = MediaQuery.of(context).size.height;
     return BackgroundCard(
       heading: 'Education',
-      maxWidth: double.maxFinite,
       mainChild: Padding(
         padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
         child: SingleChildScrollView(

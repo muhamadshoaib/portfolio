@@ -14,8 +14,6 @@ class ExperienceCard extends StatelessWidget {
     height = MediaQuery.of(context).size.height;
     return BackgroundCard(
       heading: 'Experience',
-      // maxWidth: double.maxFinite,
-      // maxHeight: height,
       mainChild: Padding(
         padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 10.0),
         child: SingleChildScrollView(
