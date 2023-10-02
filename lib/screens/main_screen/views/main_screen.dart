@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/screens/main_screen/components/contact_details_main_card.dart';
 import 'package:portfolio/screens/main_screen/components/education_main_card.dart';
+import 'package:portfolio/screens/main_screen/components/freelance_projects.dart';
 import 'package:portfolio/screens/main_screen/components/github_stats_card.dart';
 import 'package:portfolio/screens/main_screen/components/hobbies.dart';
 import 'package:portfolio/screens/main_screen/components/numbers_card.dart';
@@ -56,6 +57,7 @@ class MainScreen extends StatelessWidget {
               child: Column(
                 children: [
                   ExperienceCard(),
+                  FreelanceProjectsCard(),
                   EducationCard(),
                 ],
               ),

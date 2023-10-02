@@ -25,6 +25,11 @@ class ThemeNotifier with ChangeNotifier {
           color: Colors.white,
           fontWeight: FontWeight.bold,
         ),
+        headlineLarge: TextStyle(
+          fontSize: 25.0,
+          color: Colors.white,
+          fontWeight: FontWeight.bold,
+        ),
         bodySmall: TextStyle(
           fontSize: 15.0,
           color: Color(0xFF878787),

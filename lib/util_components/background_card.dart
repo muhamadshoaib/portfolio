@@ -40,7 +40,7 @@ class BackgroundCard extends StatelessWidget {
             if (heading != null)
               Text(
                 heading!,
-                style: Theme.of(context).textTheme.headlineMedium,
+                style: Theme.of(context).textTheme.headlineLarge,
               ),
             mainChild,
           ],
