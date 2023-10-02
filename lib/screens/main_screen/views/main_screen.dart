@@ -4,6 +4,7 @@ import 'package:portfolio/screens/main_screen/components/education_main_card.dar
 import 'package:portfolio/screens/main_screen/components/github_stats_card.dart';
 import 'package:portfolio/screens/main_screen/components/hobbies.dart';
 import 'package:portfolio/screens/main_screen/components/numbers_card.dart';
+import 'package:portfolio/screens/main_screen/components/programming_languages.dart';
 import 'package:portfolio/util_components/background_card.dart';
 import 'package:portfolio/util_components/side_bar.dart';
 import 'package:portfolio/screens/main_screen/components/experience_main_card.dart';
@@ -39,11 +40,8 @@ class MainScreen extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
-          // spacing: defaultPadding - 10.0,
-          // runSpacing: defaultPadding - 10.0,
           children: [
             Expanded(
-              // flex: 2,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -63,11 +61,11 @@ class MainScreen extends StatelessWidget {
               ),
             ),
             Expanded(
-              // flex: 2,
               child: Column(
                 children: const [
                   GithubStatsCard(),
                   HobbiesCard(),
+                  ProgrammingLanguagesCard()
                 ],
               ),
             ),

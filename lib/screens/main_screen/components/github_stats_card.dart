@@ -32,9 +32,13 @@ class _GithubStatsCardState extends State<GithubStatsCard> {
     try {
       return await http.get(url, headers: {
         "content-type": 'application/json',
-        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Origin": "*", // Required for CORS support to work
         "X-Requested-With": "XMLHttpRequest",
-        "Access-Control-Allow-Methods": "POST, GET, PATCH",
+        "Access-Control-Allow-Credentials":
+            "true", // Required for cookies, authorization headers with HTTPS
+        "Access-Control-Allow-Headers":
+            "Origin,Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,locale",
+        "Access-Control-Allow-Methods": "POST, OPTIONS"
       }).timeout(const Duration(seconds: 60), onTimeout: () {
         throw "Unable to fetch Response";
       }).then((response) async {
