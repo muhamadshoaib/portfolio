@@ -33,7 +33,7 @@ class HobbiesCard extends StatelessWidget {
                 icon: Icons.sports_cricket_rounded,
               ),
               Hobby(
-                hobby: "Video Games",
+                hobby: "E-Games",
                 icon: Icons.sports_esports_rounded,
               ),
             ],

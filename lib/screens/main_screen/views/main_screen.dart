@@ -64,8 +64,8 @@ class MainScreen extends StatelessWidget {
               child: Column(
                 children: const [
                   GithubStatsCard(),
+                  ProgrammingLanguagesCard(),
                   HobbiesCard(),
-                  ProgrammingLanguagesCard()
                 ],
               ),
             ),

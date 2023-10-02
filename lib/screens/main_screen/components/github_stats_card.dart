@@ -37,8 +37,8 @@ class _GithubStatsCardState extends State<GithubStatsCard> {
         "Access-Control-Allow-Credentials":
             "true", // Required for cookies, authorization headers with HTTPS
         "Access-Control-Allow-Headers":
-            "Origin,Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,locale",
-        "Access-Control-Allow-Methods": "POST, OPTIONS"
+            "Origin,Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,locale, Access-Control-Allow-Origin",
+        "Access-Control-Allow-Methods": "GET"
       }).timeout(const Duration(seconds: 60), onTimeout: () {
         throw "Unable to fetch Response";
       }).then((response) async {
