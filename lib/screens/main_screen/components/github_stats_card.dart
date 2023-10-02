@@ -32,6 +32,7 @@ class _GithubStatsCardState extends State<GithubStatsCard> {
     try {
       return await http.get(url, headers: {
         "content-type": 'application/json',
+        "origin": '*',
         "Access-Control-Allow-Origin": "*", // Required for CORS support to work
         "X-Requested-With": "XMLHttpRequest",
         "Access-Control-Allow-Credentials":
