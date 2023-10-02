@@ -4,8 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 class Hobby extends StatelessWidget {
   final String hobby;
   final dynamic icon;
-  final void Function()? onTap;
-  const Hobby({super.key, required this.hobby, required this.icon, this.onTap});
+  const Hobby({super.key, required this.hobby, required this.icon});
 
   @override
   Widget build(BuildContext context) {
