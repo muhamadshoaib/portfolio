@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:http/http.dart';
@@ -36,20 +37,30 @@ class _GithubStatsCardState extends State<GithubStatsCard> {
         "Access-Control-Allow-Origin": "*", // Required for CORS support to work
         "X-Requested-With": "XMLHttpRequest",
         "Access-Control-Allow-Credentials":
-            "true", // Required for cookies, authorization headers with HTTPS
+            "True", // Required for cookies, authorization headers with HTTPS
         "Access-Control-Allow-Headers":
             "Origin,Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,locale, Access-Control-Allow-Origin",
         "Access-Control-Allow-Methods": "GET"
       }).timeout(const Duration(seconds: 60), onTimeout: () {
         throw "Unable to fetch Response";
       }).then((response) async {
-        return response;
+        if (response.statusCode == 200) {
+          return response;
+        }
+        if (kDebugMode) {
+          print('Status Code: ${response.statusCode}');
+          print('Response: ${response.body}');
+        }
+        return null;
       }).catchError((onError) {
         throw ('Error while executing requests $onError');
       });
     } on HttpException {
       throw "Unable to fetch Response";
     } catch (e) {
+      if (kDebugMode) {
+        print(e);
+      }
       return null;
     }
   }

@@ -75,7 +75,10 @@ class MainScreen extends StatelessWidget {
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: personalInfoWidgets,
+                  children: [
+                    ...personalInfoWidgets,
+                    ...statWidgets,
+                  ],
                 ),
               ),
               Expanded(
@@ -84,11 +87,11 @@ class MainScreen extends StatelessWidget {
                   children: projectWidgets,
                 ),
               ),
-              Expanded(
-                child: Column(
-                  children: statWidgets,
-                ),
-              ),
+              // Expanded(
+              //   child: Column(
+              //     children: statWidgets,
+              //   ),
+              // ),
             ],
           ),
           desktop: Row(
