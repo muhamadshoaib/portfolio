@@ -9,30 +9,24 @@ class NumbersCard extends StatelessWidget {
   Widget build(BuildContext context) {
     width = MediaQuery.of(context).size.width;
     return Padding(
-                padding: const EdgeInsets.only(top: 10.0),
-                child: ConstrainedBox(
-                  constraints: BoxConstraints(
-                    maxWidth: width / 5,
-                    minWidth: width / 5,
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: const [
-                      CardWithNumbers(
-                        heading: "+20",
-                        subheading: "Projects",
-                      ),
-                      CardWithNumbers(
-                        heading: "+30",
-                        subheading: "Customers",
-                      ),
-                      CardWithNumbers(
-                        heading: "3 years",
-                        subheading: "Experience",
-                      ),
-                    ],
-                  ),
-                ),
-              );
+      padding: const EdgeInsets.only(top: 10.0),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: const [
+          CardWithNumbers(
+            heading: "+20",
+            subheading: "Projects",
+          ),
+          CardWithNumbers(
+            heading: "+30",
+            subheading: "Customers",
+          ),
+          CardWithNumbers(
+            heading: "3 years",
+            subheading: "Experience",
+          ),
+        ],
+      ),
+    );
   }
 }

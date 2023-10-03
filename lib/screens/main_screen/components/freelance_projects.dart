@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/util_components/background_card.dart';
-import 'package:portfolio/util_components/experience_card.dart';
 import 'package:portfolio/util_components/project_card.dart';
 import 'package:portfolio/util_components/tags.dart';
 

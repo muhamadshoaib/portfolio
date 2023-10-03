@@ -12,10 +12,6 @@ class ContactDetailsCard extends StatelessWidget {
   Widget build(BuildContext context) {
     width = MediaQuery.of(context).size.width;
     return BackgroundCard(
-      constraints: BoxConstraints(
-        maxWidth: width / 5,
-        minWidth: width / 5,
-      ),
       mainChild: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,

@@ -6,16 +6,38 @@ import 'package:portfolio/screens/main_screen/components/github_stats_card.dart'
 import 'package:portfolio/screens/main_screen/components/hobbies.dart';
 import 'package:portfolio/screens/main_screen/components/numbers_card.dart';
 import 'package:portfolio/screens/main_screen/components/programming_languages.dart';
-import 'package:portfolio/util_components/background_card.dart';
 import 'package:portfolio/util_components/side_bar.dart';
 import 'package:portfolio/screens/main_screen/components/experience_main_card.dart';
 import 'package:portfolio/screens/main_screen/components/personal_info_card.dart';
-import 'package:portfolio/utils/constants.dart';
 import 'package:portfolio/utils/responsive.dart';
 
 class MainScreen extends StatelessWidget {
   late double width;
   MainScreen({Key? key}) : super(key: key);
+
+  List<Widget> get personalInfoWidgets {
+    return <Widget>[
+      PersonalInformationCard(),
+      NumbersCard(),
+      ContactDetailsCard(),
+    ];
+  }
+
+  List<Widget> get projectWidgets {
+    return <Widget>[
+      ExperienceCard(),
+      FreelanceProjectsCard(),
+      EducationCard(),
+    ];
+  }
+
+  List<Widget> get statWidgets {
+    return const <Widget>[
+      GithubStatsCard(),
+      ProgrammingLanguagesCard(),
+      HobbiesCard(),
+    ];
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -38,40 +60,60 @@ class MainScreen extends StatelessWidget {
         child: SideBar(),
       ),
       body: SingleChildScrollView(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  PersonalInformationCard(),
-                  NumbersCard(),
-                  ContactDetailsCard(),
-                ],
+        child: Responsive(
+          mobile: Column(
+            children: [
+              ...personalInfoWidgets,
+              ...projectWidgets,
+              ...statWidgets,
+            ],
+          ),
+          tablet: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: personalInfoWidgets,
+                ),
               ),
-            ),
-            Expanded(
-              flex: 3,
-              child: Column(
-                children: [
-                  ExperienceCard(),
-                  FreelanceProjectsCard(),
-                  EducationCard(),
-                ],
+              Expanded(
+                flex: 3,
+                child: Column(
+                  children: projectWidgets,
+                ),
               ),
-            ),
-            Expanded(
-              child: Column(
-                children: const [
-                  GithubStatsCard(),
-                  ProgrammingLanguagesCard(),
-                  HobbiesCard(),
-                ],
+              Expanded(
+                child: Column(
+                  children: statWidgets,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
+          desktop: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: personalInfoWidgets,
+                ),
+              ),
+              Expanded(
+                flex: 3,
+                child: Column(
+                  children: projectWidgets,
+                ),
+              ),
+              Expanded(
+                child: Column(
+                  children: statWidgets,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

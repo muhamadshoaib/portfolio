@@ -10,7 +10,6 @@ class PersonalInformationCard extends StatelessWidget {
     width = MediaQuery.of(context).size.width;
     height = MediaQuery.of(context).size.height;
     return BackgroundCard(
-      maxWidth: width / 5,
       mainChild: Column(
         children: [
           CircleAvatar(
