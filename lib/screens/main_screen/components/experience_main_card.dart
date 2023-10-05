@@ -21,8 +21,8 @@ class ExperienceCard extends StatelessWidget {
             children: [
               Experience(
                 duration: 'OCT/2020',
-                jobTitle: 'Flutter Developer',
-                companyName: 'StraightUP Technologies',
+                jobTitle: 'Software Engineering Manager',
+                companyName: 'LAAM Pvt Ltd',
                 tag: Tag(
                     tag: "Current Job",
                     textColor: Theme.of(context).splashColor,
