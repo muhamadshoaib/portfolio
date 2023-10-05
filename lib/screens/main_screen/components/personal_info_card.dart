@@ -13,12 +13,12 @@ class PersonalInformationCard extends StatelessWidget {
       mainChild: Column(
         children: [
           CircleAvatar(
-            backgroundColor:
-                Theme.of(context).scaffoldBackgroundColor.withOpacity(0.3),
+            backgroundColor: Theme.of(context).secondaryHeaderColor,
             radius: 85,
-            child: const CircleAvatar(
+            child: CircleAvatar(
                 radius: 80,
-                backgroundImage: AssetImage('assets/images/profile_pic.jpeg')),
+                backgroundColor: Theme.of(context).secondaryHeaderColor,
+                backgroundImage: const AssetImage('assets/images/profile_pic.jpeg')),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 5.0),
