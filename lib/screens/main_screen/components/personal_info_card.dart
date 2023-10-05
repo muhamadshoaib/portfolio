@@ -18,7 +18,8 @@ class PersonalInformationCard extends StatelessWidget {
             child: CircleAvatar(
                 radius: 80,
                 backgroundColor: Theme.of(context).secondaryHeaderColor,
-                backgroundImage: const AssetImage('assets/images/profile_pic.jpeg')),
+                backgroundImage:
+                    const AssetImage('assets/images/profile_pic.jpeg')),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 5.0),
@@ -50,7 +51,7 @@ class PersonalInformationCard extends StatelessWidget {
           ),
           Center(
             child: Text(
-              """Experienced software engineer transitioning to Software Engineering Manager. Proven track record in delivering innovative solutions and providing effective leadership. Strong technical skills, problem-solving abilities, and a commitment to excellence. Proficient in Google Cloud Platform, Docker, and PostgreSQL. Dedicated to aligning projects with strategic objectives, delivering results, and nurturing high-performing teams.
+              """Experienced software engineer transitioning to Software Engineering Manager. Proven track record in delivering innovative solutions and providing effective leadership. Strong technical skills, problem-solving abilities, and a commitment to excellence. Proficient in Flutter, Python-Flask, Google Cloud Platform, Docker, and PostgreSQL. Dedicated to aligning projects with strategic objectives, delivering results, and nurturing high-performing teams.
               """,
               style: Theme.of(context).textTheme.bodySmall,
             ),
