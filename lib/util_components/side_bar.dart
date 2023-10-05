@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:portfolio/screens/main_screen/components/download_cv.dart';
 import 'package:portfolio/utils/constants.dart';
 
 class SideBar extends StatelessWidget {
@@ -23,31 +24,7 @@ class SideBar extends StatelessWidget {
                       padding: EdgeInsets.symmetric(vertical: defaultPadding),
                       child: Divider(),
                     ),
-                    TextButton(
-                      onPressed: () {},
-                      child: FittedBox(
-                        child: Row(
-                          children: [
-                            Text(
-                              "DOWNLOAD CV",
-                              style: TextStyle(
-                                color: Theme.of(context)
-                                    .textTheme
-                                    .bodyText1!
-                                    .color,
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.symmetric(
-                                horizontal: defaultPadding,
-                              ),
-                              child:
-                                  SvgPicture.asset("assets/icons/download.svg"),
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
+                    const DownloadCV(),
                     Container(
                       margin: const EdgeInsets.only(top: defaultPadding),
                       color: const Color(0xFF24242E),

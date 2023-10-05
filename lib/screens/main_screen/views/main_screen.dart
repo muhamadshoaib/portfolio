@@ -43,7 +43,6 @@ class MainScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     width = MediaQuery.of(context).size.width;
     return Scaffold(
-      // We hide the appBar on desktop
       appBar: Responsive.isDesktop(context)
           ? null
           : AppBar(
