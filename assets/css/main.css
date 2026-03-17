@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Theme: Light (default) ───────────────────────────────────────────── */
+:root {
+  /* Backgrounds */
+  --color-base:            #f8f9fa;
+  --color-section:         #f1f3f5;
+  --color-card:            #ffffff;
+  --color-card-hover:      #f5f7fa;
+  --color-subtle:          #e9ecef;
+  --color-tag:             #dee2e6;
+  /* Borders */
+  --color-stroke:          #dee2e6;
+  --color-stroke-faint:    #e9ecef;
+  --color-stroke-hover:    #ced4da;
+  --color-stroke-strong:   #adb5bd;
+  --color-stroke-stronger: #868e96;
+  /* Text */
+  --text-ink:              #111827;
+  --text-ink-body:         #374151;
+  --text-ink-dim:          #4b5563;
+  --text-ink-muted:        #6b7280;
+  --text-ink-faint:        #9ca3af;
+  --text-ink-ghost:        #d1d5db;
+}
+
+/* ─── Theme: Dark ───────────────────────────────────────────────────────── */
+.dark {
+  /* Backgrounds */
+  --color-base:            #0d0d0d;
+  --color-section:         #0a0a0a;
+  --color-card:            #141414;
+  --color-card-hover:      #161616;
+  --color-subtle:          #1a1a1a;
+  --color-tag:             #1f1f1f;
+  /* Borders */
+  --color-stroke:          #242424;
+  --color-stroke-faint:    #2a2a2a;
+  --color-stroke-hover:    #2e2e2e;
+  --color-stroke-strong:   #303030;
+  --color-stroke-stronger: #3a3a3a;
+  /* Text */
+  --text-ink:              #ffffff;
+  --text-ink-body:         #d1d5db;
+  --text-ink-dim:          #9ca3af;
+  --text-ink-muted:        #6b7280;
+  --text-ink-faint:        #4b5563;
+  --text-ink-ghost:        #374151;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-base);
+    color: var(--text-ink);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  ::selection {
+    background-color: #ff8828;
+    color: #0d0d0d;
+  }
+
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--color-base); }
+  ::-webkit-scrollbar-thumb { background: var(--color-stroke); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: #ff8828; }
+}
+
+@layer utilities {
+  .section-heading {
+    @apply border-l-2 border-accent pl-6 mb-12;
+  }
+}
+
+/* ─── Scroll-triggered animations (global) ─────────────────────────────── */
+[data-animate] {
+  opacity: 0;
+  transform: translateY(24px) scale(0.98);
+  transition:
+    opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1) var(--delay, 0ms),
+    transform 0.65s cubic-bezier(0.16, 1, 0.3, 1) var(--delay, 0ms);
+}
+
+[data-animate].in-view {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}

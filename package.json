@@ -1,0 +1,15 @@
+{
+  "name": "portfolio-nuxt",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview"
+  },
+  "dependencies": {
+    "nuxt": "^3.11.0",
+    "@nuxtjs/tailwindcss": "^6.12.0"
+  }
+}
