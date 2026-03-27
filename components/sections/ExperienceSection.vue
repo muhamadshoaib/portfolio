@@ -3,7 +3,7 @@ const experience = [
   {
     role: 'Software Engineering Lead',
     company: 'LAAM',
-    period: 'Current',
+    period: 'Mar 2026 – Present',
     type: 'current',
     highlights: [
       "Launched LAAM Reels — Pakistan's first shoppable fashion reels experience, enabling content-driven product discovery",
@@ -16,7 +16,7 @@ const experience = [
   {
     role: 'Mobile Commerce Platform',
     company: 'LAAM',
-    period: 'iOS & Android',
+    period: 'Feb 2025 – Mar 2026',
     type: 'project',
     highlights: [
       'iOS: 572K+ downloads · 6M+ impressions · 8.4M+ sessions · 18.73% conversion rate',
@@ -31,7 +31,7 @@ const experience = [
   {
     role: 'Software Engineering Manager',
     company: 'LAAM',
-    period: 'Prior Role',
+    period: 'Oct 2023 – Feb 2025',
     type: 'role',
     highlights: [
       'Led cross-functional engineering teams and owned delivery timelines end-to-end',
@@ -44,7 +44,7 @@ const experience = [
   {
     role: 'Backend & Platform Systems',
     company: 'LAAM',
-    period: 'Python · Flask',
+    period: 'Oct 2020 – Sep 2023',
     type: 'role',
     highlights: [
       'Transaction Service: 20,000+ requests/day — automated profit calculation, tax workflows, ledger reconciliation',
@@ -57,7 +57,7 @@ const experience = [
   {
     role: 'Flutter Developer',
     company: 'StraightUP Technologies',
-    period: '3 Months',
+    period: 'Jul 2020 – Sep 2020',
     type: 'role',
     highlights: ['Built Flutter mobile applications for client projects.'],
     tags: ['Flutter', 'Dart'],
@@ -67,54 +67,150 @@ const experience = [
 
 <template>
   <section id="experience" class="px-6 py-24">
-    <div class="max-w-6xl mx-auto">
+    <div class="max-w-7xl mx-auto">
       <div data-animate class="section-heading">
-        <h2 class="text-4xl font-black text-ink">Experience</h2>
+        <h2 class="text-5xl font-black text-ink">Experience</h2>
       </div>
 
-      <div class="space-y-5">
-        <div
-          v-for="(exp, i) in experience"
-          :key="exp.role + exp.company"
-          data-animate
-          :style="`--delay: ${i * 100}ms`"
-          class="bg-card border rounded-xl p-6 md:p-8 transition-all duration-200 hover:bg-card-hover"
-          :class="exp.type === 'current' ? 'border-accent/40 hover:border-accent/60' : 'border-stroke hover:border-stroke-strong'"
-        >
-          <div class="flex flex-wrap items-start justify-between gap-4 mb-5">
-            <div>
-              <h3 class="text-lg md:text-xl font-bold text-ink leading-tight">{{ exp.role }}</h3>
-              <div class="text-accent font-semibold text-sm mt-1">{{ exp.company }}</div>
-            </div>
-            <div class="flex items-center gap-2 shrink-0">
+      <div class="relative mt-16">
+        <!-- Gradient timeline spine -->
+        <div class="absolute left-[15px] top-8 bottom-4 w-px bg-gradient-to-b from-accent via-stroke to-stroke" />
+
+        <div class="space-y-7">
+          <div
+            v-for="(exp, i) in experience"
+            :key="exp.role + exp.company"
+            data-animate
+            :style="`--delay: ${i * 100}ms`"
+            class="relative pl-12 md:pl-14"
+          >
+            <!-- Timeline node -->
+            <div class="absolute left-0 top-5 z-10">
               <span
                 v-if="exp.type === 'current'"
-                class="bg-accent/15 text-accent text-xs font-semibold px-3 py-1 rounded-full border border-accent/30"
+                class="absolute inset-0 w-8 h-8 rounded-full bg-accent/30 animate-ping"
+              />
+              <div
+                class="w-8 h-8 rounded-full flex items-center justify-center border-2"
+                :class="exp.type === 'current'
+                  ? 'bg-accent border-accent shadow-[0_0_16px_6px_rgba(255,136,40,0.35)]'
+                  : exp.type === 'project'
+                    ? 'bg-card border-accent/40'
+                    : 'bg-card border-stroke'"
               >
-                Current
-              </span>
-              <span class="text-ink-muted text-sm font-mono">{{ exp.period }}</span>
+                <svg v-if="exp.type === 'project'" class="w-3.5 h-3.5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                </svg>
+                <svg v-else-if="exp.type === 'current'" class="w-3.5 h-3.5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+                <span v-else class="w-2 h-2 rounded-full bg-stroke-stronger" />
+              </div>
             </div>
-          </div>
 
-          <ul class="space-y-2 mb-5">
-            <li v-for="h in exp.highlights" :key="h" class="text-ink-body text-sm flex gap-2 leading-relaxed">
-              <span class="text-accent shrink-0 mt-0.5 font-bold">›</span>
-              <span>{{ h }}</span>
-            </li>
-          </ul>
-
-          <div class="flex flex-wrap gap-2">
-            <span
-              v-for="tag in exp.tags"
-              :key="tag"
-              class="bg-tag border border-stroke-hover text-ink-dim text-xs px-2.5 py-1 rounded-md font-mono"
+            <!-- CURRENT: gradient border card -->
+            <div
+              v-if="exp.type === 'current'"
+              class="p-px rounded-2xl bg-gradient-to-br from-accent/50 via-accent/20 to-transparent"
             >
-              {{ tag }}
-            </span>
+              <div class="rounded-[14px] bg-card p-6 md:p-8">
+                <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                  <div class="flex items-center gap-2">
+                    <span class="text-xs font-mono font-semibold text-accent bg-accent/10 px-2.5 py-1 rounded-md">{{ exp.company }}</span>
+                    <span class="flex items-center gap-1.5 text-xs font-semibold text-accent bg-accent/10 border border-accent/25 px-2.5 py-1 rounded-full">
+                      <span class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+                      Live
+                    </span>
+                  </div>
+                  <span class="text-xs font-mono text-ink-dim bg-subtle px-3 py-1.5 rounded-lg">{{ exp.period }}</span>
+                </div>
+                <h3 class="text-xl md:text-2xl font-bold text-ink mb-5">{{ exp.role }}</h3>
+
+                <ul class="space-y-2.5 mb-6">
+                  <li v-for="h in exp.highlights" :key="h" class="flex gap-3 leading-relaxed">
+                    <span class="shrink-0 mt-0.5 font-bold text-base" style="color: #ff8828">›</span>
+                    <span class="highlight-text text-sm md:text-base">{{ h }}</span>
+                  </li>
+                </ul>
+
+                <div class="flex flex-wrap gap-1.5 pt-5 border-t border-stroke">
+                  <span
+                    v-for="tag in exp.tags"
+                    :key="tag"
+                    class="text-xs font-mono px-2.5 py-1 rounded-md bg-accent/10 border border-accent/20 text-accent"
+                  >{{ tag }}</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- PROJECT: accent top-stripe card -->
+            <div
+              v-else-if="exp.type === 'project'"
+              class="rounded-2xl border border-accent/20 bg-card overflow-hidden hover:border-accent/40 hover:bg-card-hover transition-all duration-200"
+            >
+              <div class="h-0.5 bg-gradient-to-r from-accent via-accent/40 to-transparent" />
+              <div class="p-6 md:p-8">
+                <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                  <span class="text-xs font-mono font-semibold text-accent bg-accent/10 px-2.5 py-1 rounded-md">{{ exp.company }}</span>
+                  <span class="text-xs font-mono text-ink-dim bg-subtle px-3 py-1.5 rounded-lg">{{ exp.period }}</span>
+                </div>
+                <h3 class="text-xl md:text-2xl font-bold text-ink mb-5">{{ exp.role }}</h3>
+
+                <ul class="space-y-2.5 mb-6">
+                  <li v-for="h in exp.highlights" :key="h" class="flex gap-3 leading-relaxed">
+                    <span class="shrink-0 mt-0.5 font-bold text-base" style="color: #ff8828">›</span>
+                    <span class="highlight-text text-sm md:text-base">{{ h }}</span>
+                  </li>
+                </ul>
+
+                <div class="flex flex-wrap gap-1.5 pt-5 border-t border-stroke">
+                  <span
+                    v-for="tag in exp.tags"
+                    :key="tag"
+                    class="text-xs font-mono px-2.5 py-1 rounded-md bg-tag border border-stroke-hover text-ink-dim"
+                  >{{ tag }}</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- DEFAULT: clean card -->
+            <div
+              v-else
+              class="rounded-2xl border border-stroke bg-card overflow-hidden hover:border-stroke-strong hover:bg-card-hover transition-all duration-200 group"
+            >
+              <div class="h-px bg-gradient-to-r from-stroke-strong via-stroke to-transparent group-hover:from-accent/30 transition-colors duration-300" />
+              <div class="p-6 md:p-8">
+                <div class="flex flex-wrap items-center justify-between gap-2 mb-1">
+                  <span class="text-xs font-mono font-semibold text-accent bg-accent/10 px-2.5 py-1 rounded-md">{{ exp.company }}</span>
+                  <span class="text-xs font-mono text-ink-dim bg-subtle px-3 py-1.5 rounded-lg">{{ exp.period }}</span>
+                </div>
+                <h3 class="text-xl md:text-2xl font-bold text-ink mb-5">{{ exp.role }}</h3>
+
+                <ul class="space-y-2.5 mb-6">
+                  <li v-for="h in exp.highlights" :key="h" class="flex gap-3 leading-relaxed">
+                    <span class="shrink-0 mt-0.5 font-bold text-base" style="color: #ff8828">›</span>
+                    <span class="highlight-text text-sm md:text-base">{{ h }}</span>
+                  </li>
+                </ul>
+
+                <div class="flex flex-wrap gap-1.5 pt-5 border-t border-stroke">
+                  <span
+                    v-for="tag in exp.tags"
+                    :key="tag"
+                    class="text-xs font-mono px-2.5 py-1 rounded-md bg-tag border border-stroke-hover text-ink-dim"
+                  >{{ tag }}</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 </template>
+
+<style scoped>
+.highlight-text {
+  color: var(--text-ink);
+}
+</style>

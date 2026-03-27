@@ -21,10 +21,10 @@ const certifications = [
 </script>
 
 <template>
-  <section class="px-6 py-24">
-    <div class="max-w-6xl mx-auto">
+  <section class="px-6 py-16">
+    <div class="max-w-7xl mx-auto">
       <div data-animate class="section-heading">
-        <h2 class="text-4xl font-black text-ink">Education & Certifications</h2>
+        <h2 class="text-5xl font-black text-ink">Education & Certifications</h2>
       </div>
 
       <div class="grid md:grid-cols-2 gap-10">
@@ -40,8 +40,8 @@ const certifications = [
               class="bg-card border border-stroke rounded-xl p-5 hover:border-stroke-hover transition-colors"
             >
               <div class="text-accent font-bold text-lg font-mono">{{ edu.degree }}</div>
-              <div class="text-ink font-medium mt-1 text-sm leading-snug">{{ edu.school }}</div>
-              <div class="text-ink-muted text-xs mt-2 font-mono">{{ edu.period }}</div>
+              <div class="text-ink font-medium mt-1 text-base leading-snug">{{ edu.school }}</div>
+              <div class="text-ink-muted text-sm mt-2 font-mono">{{ edu.period }}</div>
             </div>
           </div>
         </div>
@@ -63,8 +63,8 @@ const certifications = [
                 </svg>
               </div>
               <div>
-                <div class="text-ink font-medium text-sm">{{ cert.title }}</div>
-                <div class="text-ink-muted text-xs mt-0.5">
+                <div class="text-ink font-medium text-base">{{ cert.title }}</div>
+                <div class="text-ink-muted text-sm mt-0.5">
                   {{ cert.issuer }}<span v-if="cert.year"> · {{ cert.year }}</span>
                 </div>
               </div>

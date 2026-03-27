@@ -10,7 +10,7 @@ const stats = [
 </script>
 
 <template>
-  <section class="min-h-screen flex flex-col justify-center px-6 pt-28 pb-20 max-w-6xl mx-auto">
+  <section class="min-h-screen flex flex-col justify-center px-6 pt-24 pb-16 max-w-7xl mx-auto">
 
     <p class="hero-animate delay-1 text-accent font-mono text-xs mb-5 tracking-[0.2em] uppercase">
       Engineering Lead · Mobile Platform Builder · Full-Stack Engineer

@@ -4,7 +4,7 @@ useScrollAnimation()
 </script>
 
 <template>
-  <div class="bg-base text-ink font-sans antialiased">
+  <div class="bg-base text-ink font-sans antialiased pb-12">
     <AppNav />
     <SocialSidebar />
     <EmailSidebar />

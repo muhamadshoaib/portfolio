@@ -1,8 +1,8 @@
 <template>
-  <section id="about" class="px-6 py-24 bg-section">
-    <div class="max-w-6xl mx-auto">
+  <section id="about" class="px-6 py-16 bg-section">
+    <div class="max-w-7xl mx-auto">
       <div data-animate class="section-heading">
-        <h2 class="text-4xl font-black text-ink">About</h2>
+        <h2 class="text-5xl font-black text-ink">About</h2>
       </div>
       <div class="grid md:grid-cols-2 gap-12 items-start">
         <div data-animate style="--delay: 100ms" class="space-y-5">

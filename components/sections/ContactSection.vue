@@ -3,10 +3,10 @@ import { profile } from '~/composables/useProfile'
 </script>
 
 <template>
-  <section id="contact" class="px-6 py-24 bg-section">
-    <div class="max-w-6xl mx-auto">
+  <section id="contact" class="px-6 py-16 bg-section">
+    <div class="max-w-7xl mx-auto">
       <div data-animate class="section-heading">
-        <h2 class="text-4xl font-black text-ink">Get In Touch</h2>
+        <h2 class="text-5xl font-black text-ink">Get In Touch</h2>
       </div>
 
       <div class="max-w-2xl">
@@ -21,7 +21,7 @@ import { profile } from '~/composables/useProfile'
             class="bg-card border border-stroke rounded-xl p-5 hover:border-accent/40 hover:bg-card-hover transition-all group"
           >
             <div class="text-xs text-ink-faint font-mono mb-2 uppercase tracking-widest">Email</div>
-            <div class="text-ink group-hover:text-accent transition-colors font-medium text-sm break-all">
+            <div class="text-ink group-hover:text-accent transition-colors font-medium text-base break-all">
               {{ profile.email }}
             </div>
           </a>
@@ -34,7 +34,7 @@ import { profile } from '~/composables/useProfile'
             class="bg-card border border-stroke rounded-xl p-5 hover:border-accent/40 hover:bg-card-hover transition-all group"
           >
             <div class="text-xs text-ink-faint font-mono mb-2 uppercase tracking-widest">LinkedIn</div>
-            <div class="text-ink group-hover:text-accent transition-colors font-medium text-sm">
+            <div class="text-ink group-hover:text-accent transition-colors font-medium text-base">
               {{ profile.linkedin.display }}
             </div>
           </a>
@@ -47,7 +47,7 @@ import { profile } from '~/composables/useProfile'
             class="bg-card border border-stroke rounded-xl p-5 hover:border-accent/40 hover:bg-card-hover transition-all group"
           >
             <div class="text-xs text-ink-faint font-mono mb-2 uppercase tracking-widest">GitHub</div>
-            <div class="text-ink group-hover:text-accent transition-colors font-medium text-sm">
+            <div class="text-ink group-hover:text-accent transition-colors font-medium text-base">
               {{ profile.github.display }}
             </div>
           </a>
@@ -60,7 +60,7 @@ import { profile } from '~/composables/useProfile'
             class="bg-card border border-stroke rounded-xl p-5 hover:border-accent/40 hover:bg-card-hover transition-all group"
           >
             <div class="text-xs text-ink-faint font-mono mb-2 uppercase tracking-widest">WhatsApp</div>
-            <div class="text-ink group-hover:text-accent transition-colors font-medium text-sm">
+            <div class="text-ink group-hover:text-accent transition-colors font-medium text-base">
               {{ profile.whatsapp.display }}
             </div>
           </a>
