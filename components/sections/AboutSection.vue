@@ -1,3 +1,17 @@
+<script setup lang="ts">
+import { useCountUp } from '~/composables/useAnimations'
+
+const statDefs = [
+  { target: 572, suffix: 'K+', prefix: '', label: 'iOS Downloads',      sub: 'Post-launch' },
+  { target: 686, suffix: 'K+', prefix: '', label: 'Android Downloads',  sub: 'Grew from 91K' },
+  { target: 3,   suffix: 'M+', prefix: '', label: 'Orders Processed',   sub: 'Vendor platform' },
+  { target: 6,   suffix: '+',  prefix: '', label: 'Engineers Mentored', sub: 'As Engineering Manager' },
+]
+
+const statsEl = ref<HTMLElement | null>(null)
+const { displayed, format } = useCountUp(statDefs, statsEl)
+</script>
+
 <template>
   <section id="about" class="px-6 py-16 bg-section">
     <div class="max-w-7xl mx-auto">
@@ -20,26 +34,17 @@
           </p>
         </div>
 
-        <div class="grid grid-cols-2 gap-4">
-          <div data-animate style="--delay: 150ms" class="bg-card border border-stroke rounded-xl p-5 hover:border-accent/30 transition-colors">
-            <div class="text-3xl font-black text-accent mb-1">572K+</div>
-            <div class="text-sm text-ink-body font-medium">iOS Downloads</div>
-            <div class="text-xs text-ink-faint mt-0.5">Post-launch</div>
-          </div>
-          <div data-animate style="--delay: 250ms" class="bg-card border border-stroke rounded-xl p-5 hover:border-accent/30 transition-colors">
-            <div class="text-3xl font-black text-accent mb-1">686K+</div>
-            <div class="text-sm text-ink-body font-medium">Android Downloads</div>
-            <div class="text-xs text-ink-faint mt-0.5">Grew from 91K</div>
-          </div>
-          <div data-animate style="--delay: 350ms" class="bg-card border border-stroke rounded-xl p-5 hover:border-accent/30 transition-colors">
-            <div class="text-3xl font-black text-accent mb-1">3M+</div>
-            <div class="text-sm text-ink-body font-medium">Orders Processed</div>
-            <div class="text-xs text-ink-faint mt-0.5">Vendor platform</div>
-          </div>
-          <div data-animate style="--delay: 450ms" class="bg-card border border-stroke rounded-xl p-5 hover:border-accent/30 transition-colors">
-            <div class="text-3xl font-black text-accent mb-1">6+</div>
-            <div class="text-sm text-ink-body font-medium">Engineers Mentored</div>
-            <div class="text-xs text-ink-faint mt-0.5">As Engineering Manager</div>
+        <div ref="statsEl" class="grid grid-cols-2 gap-4">
+          <div
+            v-for="(stat, i) in statDefs"
+            :key="stat.label"
+            data-animate
+            :style="`--delay: ${150 + i * 100}ms`"
+            class="bg-card border border-stroke rounded-xl p-5 hover:border-accent/30 transition-colors"
+          >
+            <div class="text-3xl font-black text-accent mb-1">{{ format(stat, displayed[i]) }}</div>
+            <div class="text-sm text-ink-body font-medium">{{ stat.label }}</div>
+            <div class="text-xs text-ink-faint mt-0.5">{{ stat.sub }}</div>
           </div>
         </div>
       </div>

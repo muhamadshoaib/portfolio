@@ -20,6 +20,12 @@ export default defineNuxtConfig({
           content: 'Building scalable products that drive real business impact.',
         },
       ],
+      script: [
+        {
+          innerHTML: `(function(){var t=localStorage.getItem('theme');if(t==='dark'||t===null){document.documentElement.classList.add('dark')}})()`,
+          type: 'text/javascript',
+        },
+      ],
       link: [
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         {
