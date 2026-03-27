@@ -21,16 +21,16 @@ const { displayed, format } = useCountUp(statDefs, statsEl)
       <div class="grid md:grid-cols-2 gap-12 items-start">
         <div data-animate style="--delay: 100ms" class="space-y-5">
           <p class="text-ink-body text-lg leading-relaxed">
-            Software engineer with <strong class="text-ink">6+ years</strong> of experience building and scaling production systems across mobile and backend platforms.
+            Software engineer with <strong class="text-ink">6+ years</strong> of experience building and shipping systems across mobile and backend.
           </p>
           <p class="text-ink-dim leading-relaxed">
-            Led end-to-end delivery of a mobile commerce platform that scaled to <strong class="text-accent">~1.3M downloads (iOS + Android)</strong> — took full ownership of the initiative and shipped a production-grade app with a lean team.
+            Led the mobile commerce platform at LAAM to <strong class="text-accent">~1.3M downloads (iOS + Android)</strong>. Took ownership and shipped with a lean team.
           </p>
           <p class="text-ink-dim leading-relaxed">
-            When the original lead resigned and multiple engineers left, I stepped in, stabilized the team, and shipped. This transformed the company from a web-only platform into a scalable mobile-first product.
+            When the original lead resigned and multiple engineers left, I stepped in, stabilized the team, and shipped. The company went from web-only to mobile-first.
           </p>
           <p class="text-ink-dim leading-relaxed">
-            Open to <strong class="text-ink">senior engineering and technical lead roles</strong>. I build systems that operate at scale — mobile platforms, high-throughput backend services, and data pipelines — and I take ownership from architecture to production.
+            Open to <strong class="text-ink">senior engineering and technical lead roles</strong>. I build mobile platforms, backend services, and data pipelines and own them from architecture to production.
           </p>
         </div>
 

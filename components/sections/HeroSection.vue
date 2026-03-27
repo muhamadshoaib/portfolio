@@ -32,8 +32,8 @@ const { displayed, format } = useCountUp(statDefs, statsEl)
         </h1>
 
         <p class="hero-animate delay-3 text-ink-dim text-lg md:text-xl max-w-2xl leading-relaxed mb-12">
-          Building scalable products that drive real business impact.
-          6+ years delivering production-grade systems used by millions.
+          I build products at scale and ship them.
+          6+ years writing systems used by millions.
         </p>
 
         <!-- Stats grid -->

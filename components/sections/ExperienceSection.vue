@@ -6,10 +6,10 @@ const experience = [
     period: 'Mar 2026 – Present',
     type: 'current',
     highlights: [
-      "Launched LAAM Reels — Pakistan's first shoppable fashion reels experience, enabling content-driven product discovery",
-      "Scaled reels platform to 10K+ reels, 1K+ brands, and thousands of creators",
-      "Mobile adoption drove the majority of orders during 11.11, LAAM's largest annual sales event",
-      'Leading cross-functional mobile engineering team delivering high-performance React Native applications',
+      "Launched LAAM Reels, Pakistan's first shoppable fashion reels. Users buy directly from video.",
+      'Scaled to 10K+ reels, 1K+ brands, and thousands of creators',
+      "Mobile drove the majority of orders during 11.11, LAAM's largest sales event",
+      'Leading the mobile engineering team shipping React Native apps at scale',
     ],
     tags: ['React Native', 'TypeScript', 'Engineering Leadership'],
   },
@@ -21,7 +21,8 @@ const experience = [
     highlights: [
       'iOS: 572K+ downloads · 6M+ impressions · 8.4M+ sessions · 18.73% conversion rate',
       'Android: grew downloads from 91K → 686K · store listing users 1.3K → 254K · 7-day retention 144 → 665',
-      'Built end-to-end: payments (Stripe, BNPL, COD), deep linking (50+ routes), push notifications (FCM), order management, returns (RMA)',
+      'Payments: Stripe, JazzCash BNPL, COD, rewards redemption, coupon validation, address validation via Google Places API',
+      'Deep linking (50+ routes), push notifications (FCM), order management, returns (RMA)',
       'Analytics pipeline: Firebase, Statsig A/B testing, MoEngage, Meta Pixel, custom UTM attribution',
       'Performance: lazy-loaded homepage, CDN image optimization, FlatList tuning, Kotlin native module for Android memory pressure',
       '1,000+ commits across full product lifecycle',
@@ -34,7 +35,7 @@ const experience = [
     period: 'Oct 2023 – Feb 2025',
     type: 'role',
     highlights: [
-      'Led cross-functional engineering teams and owned delivery timelines end-to-end',
+      'Managed engineering teams across platform services, seller systems, and marketplace infrastructure',
       'Mentored and onboarded 6+ junior engineers',
       'Established engineering standards: ESLint, Prettier, Husky, Commitlint',
       'Multi-environment CI/CD pipeline (dev / staging / prod)',
@@ -47,9 +48,9 @@ const experience = [
     period: 'Oct 2020 – Sep 2023',
     type: 'role',
     highlights: [
-      'Transaction Service: 20,000+ requests/day — automated profit calculation, tax workflows, ledger reconciliation',
-      'Feedback & Moderation System: 9,000+ req/day — flagged and blocked 1M+ problematic products, built NPS system',
-      'Vendor & Seller Platform (Flutter Web): 3M+ orders, 500K+ shipments, 1K+ daily active vendor users',
+      'Transaction Service: 20,000+ requests/day. Automated profit calculation, tax workflows, ledger reconciliation.',
+      'Feedback & Moderation: 9,000+ req/day. Flagged and blocked 1M+ problematic products, built NPS system.',
+      'Vendor Platform (Flutter Web): 3M+ orders, 500K+ shipments, 1K+ daily active vendor users.',
       'Integrated DHL and FedEx logistics APIs for shipping automation',
     ],
     tags: ['Python', 'Flask', 'Flutter Web', 'PostgreSQL'],
@@ -59,8 +60,23 @@ const experience = [
     company: 'StraightUP Technologies',
     period: 'Jul 2020 – Sep 2020',
     type: 'role',
-    highlights: ['Built Flutter mobile applications for client projects.'],
-    tags: ['Flutter', 'Dart'],
+    highlights: [
+      'Built Flutter mobile application (QOL Products) using Bloc state management.',
+      'Translated Figma designs into clean, working interfaces.',
+    ],
+    tags: ['Flutter', 'Dart', 'Bloc'],
+  },
+  {
+    role: 'Freelance Mobile Developer',
+    company: 'Independent',
+    period: '2020 – 2021',
+    type: 'role',
+    highlights: [
+      'Doodle (Doodel.se): built mobile features for a Swedish client.',
+      'Zenvoice: built voice-driven features and engagement flows.',
+      'Scholarship SPY: Django recommendation system using NLP (LDA, FastText, Cosine Similarity).',
+    ],
+    tags: ['Flutter', 'Dart', 'Django', 'Python', 'NLP'],
   },
 ]
 </script>
